@@ -1,3 +1,4 @@
+from logging import DEBUG
 from pathlib import Path
 from typing import TypeAlias
 
@@ -40,3 +41,6 @@ COLOR_SUCCESS: Color = (120, 220, 120)
 COLOR_INPUT_BOX: Color = (60, 60, 60)
 
 IS_USE_ANTIALIAS: bool = True
+
+# use values from logging module
+LOGGING_LEVEL: int = DEBUG

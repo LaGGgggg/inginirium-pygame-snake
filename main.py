@@ -1,5 +1,6 @@
 from contextlib import suppress
 from enum import Enum, auto
+from logging import basicConfig
 from sqlite3 import Error as SQLiteError
 
 import pygame
@@ -9,6 +10,7 @@ from config import (
     FPS,
     GRID_HEIGHT,
     GRID_WIDTH,
+    LOGGING_LEVEL,
     MAX_NICKNAME_LENGTH,
     SCOREBOARD_LIMIT,
     TICK_MS,
@@ -189,6 +191,8 @@ def main() -> None:
     """
     Run the Snake game.
     """
+
+    basicConfig(level=LOGGING_LEVEL, format='%(asctime)s [%(levelname)s] %(name)s: %(message)s')
 
     pygame.init()
 
