@@ -6,7 +6,7 @@
 
 1. Клонируйте репозиторий и перейдите в него:
     `git clone https://github.com/LaGGgggg/inginirium-pygame-snake && cd inginirium-pygame-snake`
-2. Установите [Python](https://www.python.org/downloads/) версии 3.11–3.13
+2. Установите [Python](https://www.python.org/downloads/) версии 3.11-3.13
 3. Установите [uv](https://docs.astral.sh/uv/getting-started/installation/)
 4. Запустите: `uv run main.py`
 
