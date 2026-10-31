@@ -1,0 +1,52 @@
+[project]
+name = "snake"
+version = "0.1.0"
+description = "Classic snake game"
+requires-python = ">=3.11,<3.14"
+dependencies = [
+    "pygame>=2.6.1",
+]
+
+[tool.uv]
+package = false
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.format]
+quote-style = 'single'
+
+[tool.ruff.lint]
+select = ['ALL']
+ignore = [
+  'D100',
+  'D101',
+  'D102',
+  'D106',
+  'D107',
+  'D200',
+  'D202',
+  'D212',
+  'COM812',
+  'ANN401',
+  'PT009',
+  'TRY003',
+  'EM101',
+  'EM102',
+  'PLR0911',
+  'PLR0912',
+  'PLR0913',
+  'PLR0915',
+  'C901',
+]
+
+[tool.ruff.lint.flake8-quotes]
+inline-quotes = 'single'
+
+[tool.ruff.lint.isort]
+lines-after-imports = 2
+
+[dependency-groups]
+dev = [
+    "ruff>=0.17.3",
+]
