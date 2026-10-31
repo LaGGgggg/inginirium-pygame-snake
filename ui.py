@@ -1,3 +1,5 @@
+from typing import Any
+
 import pygame
 
 from config import (
@@ -9,6 +11,7 @@ from config import (
     COLOR_INPUT_BOX,
     COLOR_SNAKE_BODY,
     COLOR_SNAKE_HEAD,
+    COLOR_SUCCESS,
     COLOR_TEXT,
     COLOR_TEXT_DIM,
     FONT_SIZE_LARGE,
@@ -90,11 +93,16 @@ class Renderer:
         for index, cell in enumerate(game.snake):
             self._draw_cell(cell, COLOR_SNAKE_HEAD if index == 0 else COLOR_SNAKE_BODY)
 
-    def draw_game_over(self, score: int) -> None:
+    def draw_game_over(self, score: int, *_: Any, is_won: bool) -> None:
 
         self._surface.fill(COLOR_BACKGROUND)
 
-        self._draw_text('GAME OVER', self._font_large, COLOR_ERROR, 120)
+        if is_won:
+            self._draw_text('ПОБЕДА', self._font_large, COLOR_SUCCESS, 120)
+
+        else:
+            self._draw_text('GAME OVER', self._font_large, COLOR_ERROR, 120)
+
         self._draw_text(f'Счёт: {score}', self._font_medium, COLOR_TEXT, 200)
         self._draw_text('Enter - меню', self._font_small, COLOR_TEXT_DIM, 340)
         self._draw_text('S - таблица лидеров', self._font_small, COLOR_TEXT_DIM, 370)

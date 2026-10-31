@@ -2,7 +2,7 @@ import random
 from enum import Enum
 from typing import TypeAlias
 
-from config import POINTS_PER_FOOD
+from config import POINTS_PER_FOOD, WIN_SCORE
 
 
 Cell: TypeAlias = tuple[int, int]
@@ -40,7 +40,10 @@ class Game:
         ]
 
         if not free_cells:
+
+            self.is_won = True
             self.is_over = True
+
             return None
 
         return self._random_generator.choice(free_cells)
@@ -60,6 +63,7 @@ class Game:
         self._next_direction = Direction.RIGHT
 
         self.score = 0
+        self.is_won = False
         self.is_over = False
         self.food_cell = self._spawn_food_cell()
 
@@ -101,7 +105,16 @@ class Game:
         self.snake.insert(0, new_head)
 
         if is_grows:
+
             self.score += POINTS_PER_FOOD
+
+            if self.score >= WIN_SCORE:
+
+                self.is_won = True
+                self.is_over = True
+
+                return
+
             self.food_cell = self._spawn_food_cell()
 
         else:

@@ -18,6 +18,7 @@ TICK_MS: int = 150
 FPS: int = 60
 
 POINTS_PER_FOOD: int = 10
+WIN_SCORE: int = 200
 MAX_NICKNAME_LENGTH: int = 16
 SCOREBOARD_LIMIT: int = 5
 
@@ -35,6 +36,7 @@ COLOR_FOOD: Color = (220, 60, 60)
 COLOR_TEXT: Color = (235, 235, 235)
 COLOR_TEXT_DIM: Color = (150, 150, 150)
 COLOR_ERROR: Color = (230, 90, 90)
+COLOR_SUCCESS: Color = (120, 220, 120)
 COLOR_INPUT_BOX: Color = (60, 60, 60)
 
 IS_USE_ANTIALIAS: bool = True

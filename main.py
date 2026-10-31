@@ -166,7 +166,7 @@ class App:
             self._renderer.draw_game(self._game, self._nickname)
 
         elif self._state is GameState.GAME_OVER:
-            self._renderer.draw_game_over(self._game.score)
+            self._renderer.draw_game_over(self._game.score, is_won=self._game.is_won)
 
         else:
             self._renderer.draw_scoreboard(self._scoreboard)
